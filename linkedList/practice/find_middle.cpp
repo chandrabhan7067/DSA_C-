@@ -27,37 +27,40 @@ void print(Node *&head)
 
 // time compexity is o(n)
 
-// void Find_middle(Node *&head){
-//     Node *p = head;
-//     int count = 0;
+void Find_middle(Node *&head)
+{
+    Node *p = head;
+    int count = 0;
 
-//     while (p != NULL)
-//     {
-//         p = p->next;
-//         count++;
-//     }
-//     cout<<count<<endl;
-//     int mid = count/2;
-//     cout<<mid<<endl;
-//     p = head;
-//     int j = 0;
-//     while (j != mid)
-//     {
-//         p = p->next;
-//         j++;
-//     }
-//     cout<<"Mid node is:"<<p->data;    
-// }
+    while (p != NULL)
+    {
+        p = p->next;
+        count++;
+    }
+    cout << count << endl;
+    int mid = count / 2;
+    cout << mid << endl;
+    p = head;
+    int j = 0;
+    while (j != mid)
+    {
+        p = p->next;
+        j++;
+    }
+    cout << "Mid node is:" << p->data;
+}
 
 // Another solution
 
-void Middle(Node *head){
+void Middle(Node *head)
+{
     if (head == NULL || head->next == NULL)
     {
-        cout<<"Middle is "<<head;
+        cout << "Middle is " << head;
     }
-    if(head->next->next == NULL){
-        cout<<"Middle is "<<head->next->next;
+    if (head->next->next == NULL)
+    {
+        cout << "Middle is " << head->next;
     }
     Node *slow = head;
     Node *fast = head->next;
@@ -71,7 +74,7 @@ void Middle(Node *head){
         }
         slow = slow->next;
     }
-    cout<<"Middle is "<<slow->data;
+    cout << "Middle is " << slow->data;
 }
 
 int main()
@@ -85,6 +88,8 @@ int main()
     third->next = fourth;
     fourth->next = NULL;
     print(head);
-    // Find_middle(head);
+    Find_middle(head);
+    cout << endl;
     Middle(head);
+    cout << endl;
 }
